@@ -101,6 +101,11 @@ const Lab5 = (app) => {
     module.name = newName;
     res.json(module);
   });
+  app.get("/a5/module/description/:newDescription", (req, res) => {
+    const { newDescription } = req.params;
+    module.description = newDescription;
+    res.json(module);
+  });
   app.get("/a5/todos", (req, res) => {
     const { completed } = req.query;
     if (completed !== undefined) {
