@@ -1,10 +1,14 @@
 import mongoose from "mongoose";
-const courseSchema = new mongoose.Schema({
-    name: { type: String, required: true, unique: true },
-    number: { type: String, required: true },
+const coursesSchema = new mongoose.Schema(
+  {
+    id: { type: String, required: true, unique: true },
+    name: { type: String, required: true },
+    number: String,
     startDate: Date,
     endDate: Date,
     image: String,
   },
-  { collection: "courses" });
-export default courseSchema;
+  { collection: "courses" }
+);
+
+export default coursesSchema;
