@@ -1,16 +1,22 @@
 import mongoose from "mongoose";
-const moduleSchema = new mongoose.Schema({
-    name: { type: String, required: true },
-    description: { type: String },
-    course: { type: String },
-    lessons: [
-        {
-            _id: { type: String, required: true },
-            name: { type: String, required: true },
-            description: { type: String },
-            module: { type: String, required: true }
-        }
-    ]
+const lessonSchema = new mongoose.Schema(
+  {
+    id: String,
+    name: String,
+    description: String,
+    module: String,
   },
-  { collection: "modules" });
+  { _id: false }
+); 
+
+const moduleSchema = new mongoose.Schema(
+  {
+    id: String,
+    name: { type: String, required: true },
+    description: String,
+    course: String,
+    lessons: [lessonSchema],
+  },
+  { collection: "modules" }
+);
 export default moduleSchema;
