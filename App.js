@@ -24,7 +24,7 @@ const sessionOptions = {
 };
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "https://a6--moonlit-malasada-879caa.netlify.app",
     credentials: true,
   })
 );
